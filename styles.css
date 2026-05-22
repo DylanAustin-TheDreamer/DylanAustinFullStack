@@ -714,6 +714,10 @@ img{
     .error-actions .btn {
         width: 100%;
     }
+    .nav-item{
+    border-top: #333 1px solid;
+    padding: 5px;
+}
 }
 
 @media (min-width: 849px) {

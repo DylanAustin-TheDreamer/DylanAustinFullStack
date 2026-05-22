@@ -1,58 +1,8 @@
 // =====================
-// Toggle Dropdown Menu & Smooth Scrolling
-// =====================
-const navbarToggler = document.getElementById('navbarToggler');
-const dropdownMenu = document.getElementById('dropdownMenu');
-const dropdownLinks = document.querySelectorAll('.dropdown-link');
-
-function toggleDropdown(e) {
-    e.stopPropagation();
-    dropdownMenu.classList.toggle('active');
-}
-
-function closeDropdown() {
-    dropdownMenu.classList.remove('active');
-}
-
-// Click handler for button
-navbarToggler.addEventListener('click', toggleDropdown);
-
-// iOS Safari touchend handler
-navbarToggler.addEventListener('touchend', (e) => {
-    e.preventDefault();
-    toggleDropdown(e);
-});
-
-// Dropdown links - close menu and scroll
-dropdownLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href');
-        if (href && href.startsWith('#')) {
-            e.preventDefault();
-            closeDropdown();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-    });
-});
-
-// Close dropdown when clicking outside
-document.addEventListener('click', (e) => {
-    if (!navbarToggler.contains(e.target) && !dropdownMenu.contains(e.target)) {
-        closeDropdown();
-    }
-});
-
-// =====================
-// Smooth Scrolling Navigation (desktop links)
+// Smooth Scrolling Navigation
 // =====================
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('a[href^="#"]:not(.dropdown-link)').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
