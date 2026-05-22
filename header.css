@@ -64,10 +64,37 @@ header{
     border-bottom: 1px solid #e0e0e0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 999;
+    width: 100%;
+    max-width: 100%;
 }
 
 .dropdown-menu-mobile.active {
     display: block !important;
+}
+
+.dropdown-link {
+    display: block;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dropdown-link:active,
+.dropdown-link:focus {
+    background-color: #f0f0f0;
+}
+
+.dropdown-link:visited {
+    color: #333;
 }
 
 .dropdown-link {

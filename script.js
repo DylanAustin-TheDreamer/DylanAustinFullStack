@@ -22,33 +22,49 @@ document.addEventListener("DOMContentLoaded", () => {
     const dropdownMenu = document.getElementById('dropdownMenu');
     const dropdownLinks = document.querySelectorAll('.dropdown-link');
     
-    // Use both click and touchend for better mobile support
-    navbarToggler.addEventListener('click', (e) => {
+    function toggleDropdown(e) {
         e.stopPropagation();
         dropdownMenu.classList.toggle('active');
-    });
+    }
     
+    function closeDropdown() {
+        dropdownMenu.classList.remove('active');
+    }
+    
+    // Click handler for button
+    navbarToggler.addEventListener('click', toggleDropdown);
+    
+    // iOS Safari touchend handler
     navbarToggler.addEventListener('touchend', (e) => {
         e.preventDefault();
-        e.stopPropagation();
-        dropdownMenu.classList.toggle('active');
+        toggleDropdown(e);
     });
     
+    // Prevent link click from propagating to document
     dropdownLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            dropdownMenu.classList.remove('active');
+            e.stopPropagation();
+            closeDropdown();
         });
         link.addEventListener('touchend', (e) => {
-            dropdownMenu.classList.remove('active');
+            e.stopPropagation();
+            closeDropdown();
         });
     });
     
     // Close dropdown when clicking outside
     document.addEventListener('click', (e) => {
         if (!navbarToggler.contains(e.target) && !dropdownMenu.contains(e.target)) {
-            dropdownMenu.classList.remove('active');
+            closeDropdown();
         }
     });
+    
+    // Close on touchend outside
+    document.addEventListener('touchend', (e) => {
+        if (!navbarToggler.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            closeDropdown();
+        }
+    }, false);
 
     // =====================
     // Contact Form Handling
