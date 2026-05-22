@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dylan - Web Developer Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="mechanic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+     <header style="overflow-x: hidden;">
+        <nav class="navbar custom-navbar" style="background-color: white; overflow-x: hidden;">
+            <div class="container">
+                <a class="navbar-brand nav-brand" href="index.html">Dylan Austin</a>
+                <div class="nav-links-container">
+                    <div class="custom-nav-links nav-menu">
+                        <a class="mechanic" href="mechanic.html">Mechanic Shop</a>
+                        <a  href="#home">Home</a>
+                        <a  href="#about">About</a>
+                        <a  href="#skills">Skills</a>
+                        <a  href="#projects">Projects</a>
+                        <a  href="#contact">Contact</a>
+                    </div>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="mechanic" href="mechanic.html">Mechanic Shop</a>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm Dylan Austin</h1>
+                <p class="subtitle">Full Stack Web Developer</p>
+                <p class="tagline">Crafting beautiful and functional web experiences</p>
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate web developer with 1+ years of experience building modern, responsive websites and applications. I love turning ideas into reality through clean, efficient code and thoughtful design.</p>
+                    <p>My journey in web development started with a deep curiosity for programming, and it has evolved into a career dedicated to creating exceptional digital experiences. I'm constantly learning and exploring new technologies to stay at the forefront of web development.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>3</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="stat">
+                        <h3>1+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat">
+                        <h3>0</h3>
+                        <p>AI Agents</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>Frontend</h3>
+                    <p>HTML5, CSS3, JavaScript, React-native</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-node-js"></i>
+                    <h3>Backend</h3>
+                    <p>Node.js, C# .NET, Django, PostgreSQL, Java/SpringBoot</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-git"></i>
+                    <h3>Tools & DevOps</h3>
+                    <p>GitHub, Docker, Railway, Heroku or any Hosting service you need</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Mobile-first approach, Cross-browser compatibility</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><img src="assets/images/billydwebsite.png"></div>
+                    <h3>Billy D Fitness</h3>
+                    <p>Billy needed a new modern website to showcase his services and hard earned reviews! I got him free hosting with a custom domain name</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Free Hosting</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <h3>Booking System</h3>
+                    <p>In progress, I will update this soon</p>
+                    <div class="project-tags">
+                        <span>Django</span>
+                        <span>HTML + CSS</span>
+                        <span>JavaScript</span>
+                        <span>Heroku</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"><img src="assets/images/apcoachingwebsite.png"></div>
+                    <h3>AP Coaching</h3>
+                    <p>Alex said he needed improvements to his canva website because he couldn't collect user information in order to gain new leads. I made a website from scratch with a free database that stores user contact information alongside requested services</p>
+                    <div class="project-tags">
+                        <span>HTML + CSS</span>
+                        <span>JavaScript</span>
+                        <span>Free Hosting</span>
+                        <span>Free Database</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="contact-intro">I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
+            <div class="contact-content">
+                <form id="lead-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div id="loader" class="spinner" style="display: none;">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:dylanaustinfullstack@gmail.com" style="text-decoration: none;">dylanaustinfullstack@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+447306638917" style="text-decoration: none;">+44 7306638917</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Lancashire, UK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-codepen"></i></a>
+            </div>
+        </div>
+    </section>
+    <div class="whatsapp-bubble">
+            <a href="https://wa.me/447306638917" target="_blank" style="color: rgb(37, 211, 102);"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Dylan Austin Full-Stack. All rights reserved.</p>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("lead-form").addEventListener("submit", function (event) {
+                event.preventDefault(); // stop page refresh
+                submitForm();           // call your function
+            });
+        });
+    </script>
+</body>
+</html>

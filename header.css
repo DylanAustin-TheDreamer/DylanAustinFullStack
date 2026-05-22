@@ -1,0 +1,15 @@
+header{
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+}
+.navbar{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+}
+.nav-links-container{
+    display: none;
+}
+.link{
+    text-decoration: none !important;
+}
