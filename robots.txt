@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /pages/
+Disallow: confirmation.html
+Disallow: errorpage.html
+
+Sitemap: https://www.dylanaustinfullstack.co.uk/sitemap.xml
+
+# Allow all search engines to crawl
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
