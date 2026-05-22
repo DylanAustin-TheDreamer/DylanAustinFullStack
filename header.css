@@ -96,17 +96,3 @@ header{
 .dropdown-link:visited {
     color: #333;
 }
-
-.dropdown-link {
-    display: block;
-    padding: 16px 20px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    border-bottom: 1px solid #f0f0f0;
-    transition: background-color 0.2s;
-}
-
-.dropdown-link:active {
-    background-color: #f0f0f0;
-}
