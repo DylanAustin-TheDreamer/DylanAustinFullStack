@@ -16,15 +16,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // =====================
-    // Close Offcanvas on Link Click
+    // Toggle Dropdown Menu
     // =====================
-    const offcanvasLinks = document.querySelectorAll('#offcanvasNavbar a');
-    const offcanvasElement = document.getElementById('offcanvasNavbar');
-    const offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+    const navbarToggler = document.getElementById('navbarToggler');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    const dropdownLinks = document.querySelectorAll('.dropdown-link');
     
-    offcanvasLinks.forEach(link => {
+    navbarToggler.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('active');
+    });
+    
+    dropdownLinks.forEach(link => {
         link.addEventListener('click', () => {
-            offcanvas.hide();
+            dropdownMenu.classList.remove('active');
         });
     });
 
