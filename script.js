@@ -22,14 +22,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const dropdownMenu = document.getElementById('dropdownMenu');
     const dropdownLinks = document.querySelectorAll('.dropdown-link');
     
-    navbarToggler.addEventListener('click', () => {
+    // Use both click and touchend for better mobile support
+    navbarToggler.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdownMenu.classList.toggle('active');
+    });
+    
+    navbarToggler.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         dropdownMenu.classList.toggle('active');
     });
     
     dropdownLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
             dropdownMenu.classList.remove('active');
         });
+        link.addEventListener('touchend', (e) => {
+            dropdownMenu.classList.remove('active');
+        });
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navbarToggler.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.classList.remove('active');
+        }
     });
 
     // =====================

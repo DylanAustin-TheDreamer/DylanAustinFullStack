@@ -7,6 +7,15 @@ header{
 .navbar{
     position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .nav-links-container{
     display: none;
@@ -16,10 +25,37 @@ header{
 }
 
 /* =====================
+   Hamburger Button
+   ===================== */
+.navbar-toggler {
+    display: block !important;
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 1001;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 28px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 24'%3e%3cpath stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 7h18M6 12h18M6 17h18'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* =====================
    Dropdown Menu Styles
    ===================== */
 .dropdown-menu-mobile {
-    display: none;
+    display: none !important;
     position: fixed;
     top: 60px;
     left: 0;
@@ -27,23 +63,11 @@ header{
     background-color: white;
     border-bottom: 1px solid #e0e0e0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
-    animation: slideDown 0.3s ease-out;
+    z-index: 999;
 }
 
 .dropdown-menu-mobile.active {
-    display: block;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    display: block !important;
 }
 
 .dropdown-link {
