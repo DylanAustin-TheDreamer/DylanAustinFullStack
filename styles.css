@@ -229,9 +229,28 @@ html {
     margin-bottom: 0.5rem;
 }
 
+.stat-number {
+    font-size: 2.5rem !important;
+    font-weight: bold !important;
+    color: var(--primary-color) !important;
+    margin-bottom: 0.5rem !important;
+}
+
 .stat p {
     color: var(--text-light);
     font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-number {
+        font-size: 1.75rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -477,6 +496,25 @@ html {
 .info-item h4 {
     margin-bottom: 0.25rem;
     color: var(--text-color);
+}
+
+.contact-label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .contact-label {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-label {
+        font-size: 0.95rem;
+    }
 }
 
 .info-item p {
