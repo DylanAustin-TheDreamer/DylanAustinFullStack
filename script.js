@@ -23,9 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
             text: "Absolutely brilliant service from start to finish! I needed a professional website built for my fitness business and Dylan exceeded all expectations. The design is sleek, modern, and exactly what I was looking for. His attention to detail, programming skills, and ability to bring my vision to life were top-tier. Communication was fantastic throughout the entire build. If you need a high-quality website from a talented developer who genuinely cares about the project, look no further than Dylan. Highly recommended!",
             link: "https://share.google/St6vj8AhETTlqqTk4",
         },
+        {
+            name: "Lee Dyson",
+            business: "Wood Farm Fisheries",
+            rating: 5,
+            text: "Absolutely amazing lad. I wanted something that looked professional and was also able to update and this was delivered with no hesitation. Communication from start to finish was on point along with every little detail and even through I. Some ideas which made it “pop” even more. Thankyou very much much. Will definitely be recommending you to others 5*****",
+            link: "https://maps.app.goo.gl/vxk78Dq155dX8XWi8",
+        },
     ];
 
     const reviewsGrid = document.getElementById("reviews-grid");
+    const reviewTransitionDuration = 1300;
+    const reviewCycleDelay = 5000;
+    let reviewTransitionTimeout = null;
+    let reviewCycleTimeout = null;
+    let isReviewTransitioning = false;
 
     function buildStars(rating) {
         const safeRating = Math.max(0, Math.min(5, rating));
@@ -70,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     card.classList.add("show");
                 });
             });
+            isReviewTransitioning = false;
         };
 
         if (!animate || !reviewsGrid.children.length) {
@@ -77,11 +90,21 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        if (isReviewTransitioning) {
+            return;
+        }
+
+        isReviewTransitioning = true;
+
         reviewsGrid.querySelectorAll(".review-card").forEach(card => {
             card.classList.remove("show");
         });
 
-        window.setTimeout(finishRender, 1600);
+        if (reviewTransitionTimeout) {
+            window.clearTimeout(reviewTransitionTimeout);
+        }
+
+        reviewTransitionTimeout = window.setTimeout(finishRender, reviewTransitionDuration);
     }
 
     if (reviewsGrid) {
@@ -89,11 +112,26 @@ document.addEventListener("DOMContentLoaded", () => {
         renderReviews(currentIndex, false);
 
         if (reviews.length > 1) {
-            window.setInterval(() => {
-                currentIndex = (currentIndex + 1) % reviews.length;
-                renderReviews(currentIndex);
-            }, 5000);
+            const scheduleNextReview = () => {
+                reviewCycleTimeout = window.setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % reviews.length;
+                    renderReviews(currentIndex);
+                    scheduleNextReview();
+                }, reviewCycleDelay);
+            };
+
+            scheduleNextReview();
         }
+
+        window.addEventListener("beforeunload", () => {
+            if (reviewTransitionTimeout) {
+                window.clearTimeout(reviewTransitionTimeout);
+            }
+
+            if (reviewCycleTimeout) {
+                window.clearTimeout(reviewCycleTimeout);
+            }
+        });
     }
 
     // =====================
