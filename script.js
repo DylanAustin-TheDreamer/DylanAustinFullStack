@@ -15,6 +15,87 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    const reviews = [
+        {
+            name: "Billy D",
+            business: "Billy D Fitness",
+            rating: 5,
+            text: "Absolutely brilliant service from start to finish! I needed a professional website built for my fitness business and Dylan exceeded all expectations. The design is sleek, modern, and exactly what I was looking for. His attention to detail, programming skills, and ability to bring my vision to life were top-tier. Communication was fantastic throughout the entire build. If you need a high-quality website from a talented developer who genuinely cares about the project, look no further than Dylan. Highly recommended!",
+            link: "https://share.google/St6vj8AhETTlqqTk4",
+        },
+    ];
+
+    const reviewsGrid = document.getElementById("reviews-grid");
+
+    function buildStars(rating) {
+        const safeRating = Math.max(0, Math.min(5, rating));
+        return "★★★★★".slice(0, safeRating);
+    }
+
+    function renderReviews(startIndex = 0, animate = true) {
+        if (!reviewsGrid) {
+            return;
+        }
+
+        if (reviews.length === 0) {
+            reviewsGrid.innerHTML = '<div class="review-empty">Add your Google reviews to the reviews array in script.js.</div>';
+            return;
+        }
+        
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const reviewsToShow = isMobile ? 1 : 3;
+
+        const visibleReviews = Array.from({ length: reviewsToShow }, (_, offset) => {
+            return reviews[(startIndex + offset) % reviews.length];
+        });
+
+        const reviewsMarkup = visibleReviews.map(review => `
+            <article class="review-card">
+                <div class="review-card-top">
+                    <div>
+                        <h3>${review.name}</h3>
+                        <p class="review-business">${review.business}</p>
+                    </div>
+                    <span class="review-source">Google</span>
+                </div>
+                <div class="review-stars" aria-label="${review.rating} out of 5 stars">${buildStars(review.rating)}</div>
+                <p class="review-text">${review.text.slice(0,100)}... <a href="${review.link}" target="_blank" style="color: blue; text-decoration: none;">See More.</a></p>
+            </article>
+        `).join("");
+
+        const finishRender = () => {
+            reviewsGrid.innerHTML = reviewsMarkup;
+            window.requestAnimationFrame(() => {
+                reviewsGrid.querySelectorAll(".review-card").forEach(card => {
+                    card.classList.add("show");
+                });
+            });
+        };
+
+        if (!animate || !reviewsGrid.children.length) {
+            finishRender();
+            return;
+        }
+
+        reviewsGrid.querySelectorAll(".review-card").forEach(card => {
+            card.classList.remove("show");
+        });
+
+        window.setTimeout(finishRender, 1600);
+    }
+
+    if (reviewsGrid) {
+        let currentIndex = 0;
+        renderReviews(currentIndex, false);
+
+        if (reviews.length > 1) {
+            window.setInterval(() => {
+                currentIndex = (currentIndex + 1) % reviews.length;
+                renderReviews(currentIndex);
+            }, 5000);
+        }
+    }
+
     // =====================
     // Contact Form Handling
     // =====================

@@ -415,6 +415,119 @@ html {
 }
 
 /* ===================== 
+   Reviews Section 
+   ===================== */
+
+.reviews {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.reviews h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.reviews-intro {
+    text-align: center;
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.review-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transition: opacity ease-in-out 1.4s;
+}
+
+.review-card.show{
+    opacity: 1;
+}
+
+.review-card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.review-card-top h3 {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.review-business {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.review-source {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: var(--bg-light);
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.review-stars {
+    color: #f4b400;
+    letter-spacing: 0.15rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.review-text {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 0.98rem;
+}
+
+.review-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--text-light);
+    padding: 2rem;
+    border: 1px dashed var(--border-color);
+    border-radius: 12px;
+    background: var(--bg-white);
+}
+
+@media (max-width: 992px) {
+    .reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews h2 {
+        font-size: 2rem;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===================== 
    Contact Section 
    ===================== */
 
