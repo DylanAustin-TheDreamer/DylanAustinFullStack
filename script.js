@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const reviewsGrid = document.getElementById("reviews-grid");
     const reviewTransitionDuration = 1300;
-    const reviewCycleDelay = 5000;
+    const reviewCycleDelay = 6000;
     let reviewTransitionTimeout = null;
     let reviewCycleTimeout = null;
     let isReviewTransitioning = false;
@@ -75,6 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
             </article>
         `).join("");
 
+        if (isReviewTransitioning) {
+            return;
+        }
+
         const finishRender = () => {
             reviewsGrid.innerHTML = reviewsMarkup;
             window.requestAnimationFrame(() => {
@@ -87,10 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!animate || !reviewsGrid.children.length) {
             finishRender();
-            return;
-        }
-
-        if (isReviewTransitioning) {
             return;
         }
 
