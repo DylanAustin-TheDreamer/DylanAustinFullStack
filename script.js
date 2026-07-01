@@ -30,6 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
             text: "Absolutely amazing lad. I wanted something that looked professional and was also able to update and this was delivered with no hesitation. Communication from start to finish was on point along with every little detail and even through I. Some ideas which made it “pop” even more. Thankyou very much much. Will definitely be recommending you to others 5*****",
             link: "https://maps.app.goo.gl/vxk78Dq155dX8XWi8",
         },
+        {
+            name: "Alex Hudson",
+            business: "AP Coaching",
+            rating: 5,
+            text: "I worked with Dylan to build a website for my Online coaching business, he was super helpful, patient and knowledgeable through the entire process and and made as many changes as I requested without any delay! I now have a fantastic, up to date website to be used as a lead funnel to help me generate new business, all thanks to Dylan’s help. I’d recommend him to anyone looking for a stress free way to build a site for themselves or their business",
+            link: "https://maps.app.goo.gl/5dDBc8T4GCKEn6jj9",
+        },
     ];
 
     const reviewsGrid = document.getElementById("reviews-grid");
