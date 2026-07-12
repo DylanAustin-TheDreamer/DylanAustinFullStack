@@ -95,15 +95,27 @@ html {
    ===================== */
 
 .hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
     color: white;
     padding: 100px 20px;
     text-align: center;
-    min-height: 600px;
+    min-height: 550px;
     display: flex;
     align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    box-shadow: 0 18px 24px -18px rgba(0, 0, 0, 0.65);
 }
-
+.hero-image{
+    position: absolute;
+    inset: 0;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
 .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
@@ -330,6 +342,37 @@ html {
     }
 }
 
+/* ===================== 
+   Mobile Responsive Section
+   ===================== */
+
+.mobile-responsive{
+    display: flex;
+    flex-direction: row;
+}
+.icon-grid{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: xx-large;
+    gap: 10px;
+    color: var(--primary-color);
+}
+.icon-grid i{
+    border: 1px var(--secondary-color) solid;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .mobile-responsive h2 {
+        font-size: 2rem;
+    }
+
+    .mobile-responsive {
+        flex-direction: column;
+    }
+}
 /* ===================== 
    Projects Section 
    ===================== */
@@ -832,6 +875,33 @@ section {
 }
 
 .whatsapp-bubble a {
+    color: white;
+    font-size: 36px;
+    text-decoration: none;
+    margin-bottom: 3px;
+}
+.facebook-bubble {
+    position: fixed;
+    bottom: 90px;           /* Distance from bottom - adjust as needed */
+    right: 20px;            /* Distance from right - adjust as needed */
+    z-index: 1000;          /* Ensures it appears above other content */
+    width: 60px;            /* Adjust size */
+    height: 60px;
+    border-radius: 50%;     /* Makes it circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e9e9e9;  /* WhatsApp green */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.facebook-bubble:hover {
+    transform: scale(1.1);
+}
+
+.facebook-bubble a {
     color: white;
     font-size: 36px;
     text-decoration: none;

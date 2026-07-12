@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, observerOptions);
 
     // Observe skill cards and project cards
-    document.querySelectorAll('.skill-card, .project-card').forEach(el => {
+    document.querySelectorAll('.skill-card, .project-card, .fade').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';

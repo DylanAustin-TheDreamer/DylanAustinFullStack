@@ -46,6 +46,9 @@
                             <a class="nav-link" href="#home" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="#reviews-section" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">Reviews</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#about" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">About</a>
                         </li>
                         <li class="nav-item">
@@ -53,9 +56,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#projects" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#reviews-section" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">Reviews</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contact" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">Contact</a>
@@ -67,25 +67,27 @@
     </header>
 <main>
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero fade">
+        <img class="hero-image" fetchpriority="high" src="https://res.cloudinary.com/dcos20qus/image/upload/v1783813454/c6b25e37a997eb7696f114fb7a55e339.webp">
         <div class="container">
-            <div class="hero-content">
+            <!-- <div class="hero-content">
                 <h1>Hi, I'm Dylan Austin</h1>
                 <p class="subtitle">Full Stack Web Developer</p>
                 <p class="tagline">Crafting beautiful and functional web experiences</p>
                 <a href="#projects" class="btn btn-primary">View My Work</a>
-            </div>
+            </div> -->
         </div>
     </section>
     
-    <section id="reviews-section" class="reviews">
+    <section id="reviews-section" class="reviews fade">
         <div class="container">
             <h2>Google Reviews</h2>
             <div id="reviews-grid" class="reviews-grid" aria-live="polite"></div>
         </div>
+        <div id="about"></div>
     </section>
     <!-- About Section -->
-    <section id="about" class="about">
+    <section class="about fade">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
@@ -135,6 +137,26 @@
                     <i class="fas fa-mobile-alt"></i>
                     <h3>Responsive Design</h3>
                     <p>Mobile-first approach, Cross-browser compatibility</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="overflow-x: hidden; margin-top: 100px;" class="fade">
+        <div class="container">
+            <div class="mobile-responsive" style="display: flex; justify-content: center; overflow-x: hidden; overflow-y: hidden;">
+                <div style="margin-bottom: 10px;">
+                    <h2 style="margin-bottom: 15px;">Mobile Responsive</h2>
+                    <p style="font-size: larger; border-left: solid 2px blue; padding-left: 10px;">Websites that look and feel like they were designed for mobiles</p>
+                    <div class="icon-grid">
+                        <i aria-label="Icon for safari web browser" class="fa-brands fa-safari"></i>
+                        <i aria-label="Icon for firefox web browser" class="fa-brands fa-firefox"></i>
+                        <i aria-label="Icon for chrome web browser" class="fa-brands fa-chrome"></i>
+                        <i aria-label="Icon for microsoft edge web browser" class="fa-brands fa-edge-legacy"></i>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                <img loading="lazy" style="height: 400px; width: fit-content;" src="https://res.cloudinary.com/dcos20qus/image/upload/v1783808868/b873c634b99bcc8ae008d4d0ecf301ce.webp" class="fade">
                 </div>
             </div>
         </div>
@@ -196,14 +218,15 @@
             </div>
         </div>
 
-        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;" class="mt-4">
+        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 150px;" class="fade">
                 <h2 class="mt-4">Register for testing the Dylan Austin Music App</h2>
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeDRYqaRiS01i5D2wKulC7jP7Nj_z8pplazrC_N55NDZ5HFeQ/viewform?embedded=true" width="640" height="906" frameborder="0" marginheight="0" marginwidth="0" style="width: 100%;">Loading…</iframe>
             </div>
+        <div id="contact"></div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section class="contact fade">
         <div class="container">
             <h2>Get In Touch</h2>
             <p class="contact-intro">I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
@@ -259,15 +282,19 @@
             </div>
         </div>
     </section>
+
     <div class="whatsapp-bubble">
             <a href="https://wa.me/447306638917" target="_blank" style="color: rgb(37, 211, 102);"><i class="fa-brands fa-whatsapp" aria-label="WhatsApp"></i></a>
-        </div>
+    </div>
+    <div class="facebook-bubble" style="overflow-x: hidden;">
+        <a aria-label="facebook link" href="https://www.facebook.com/profile.php?id=61583000184821" target="_blank" style="color: rgb(40, 105, 228);"><i class="fa-brands fa-facebook"></i></a>
+    </div>
 </main>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Dylan Austin Full-Stack. All rights reserved.</p>
-            <a href="privacy.html">Privacy Policy</a>
+            <p>&copy; 2026 Dylan Austin Full-Stack. All rights reserved. <a href="privacy.html"> Privacy Policy</a></p>
+            <p>White Mountain image by <a href="https://www.vecteezy.com/members/rysak" target="_blank">Anton Rysak</a><p>
         </div>
     </footer>
 
